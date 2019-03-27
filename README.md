@@ -4,11 +4,11 @@
 
 ## Related Projects
 
-https://github.com/opentabs/sidebar
-https://github.com/opentabs/menu
-https://github.com/opentabs/reviews
-https://github.com/opentabs/reservation-calendar
-https://github.com/opentabs/photos-carousel
+1. https://github.com/opentabs/sidebar
+1. https://github.com/opentabs/menu
+1. https://github.com/opentabs/reviews
+1. https://github.com/opentabs/reservation-calendar
+1. https://github.com/opentabs/photos-carousel
 
 ## Table of Contents
 
