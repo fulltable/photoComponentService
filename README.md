@@ -4,10 +4,11 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+https://github.com/opentabs/sidebar
+https://github.com/opentabs/menu
+https://github.com/opentabs/reviews
+https://github.com/opentabs/reservation-calendar
+https://github.com/opentabs/photos-carousel
 
 ## Table of Contents
 
