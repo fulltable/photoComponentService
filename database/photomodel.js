@@ -4,11 +4,11 @@ mongoose.Promise = global.Promise;
 
 const photoSchema = mongoose.Schema({
   id: Number,
-  image: [{
+  image: {
     imageUrl: String,
     comment: String,
     date: Date,
-  }],
+  },
 });
 
 const Photo = mongoose.model('Photo', photoSchema);
