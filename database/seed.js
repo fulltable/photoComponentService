@@ -1,16 +1,34 @@
+const faker = require('faker');
+
 const database = require('./index');
+const Photo = require('./photomodel');
 
-const samplePhotos = [{
-  id: 1,
-  imageUrl: 'https://source.unsplash.com/1600x900/?cat',
-  comment: [{ body: 'hola', date: '2014-02-10T10:50:42.389Z' }],
-  restaurant_id: 'hola',
+const samplePhotos = [];
 
-}]
+function generatePhotos() {
+  for (let id = 1; id <= 100; id += 1) {
+    const photoArray = [];
+    
+    for (let i = 0; i < 10; i += 1) {
+      const pictureID = (Math.floor(Math.random() * 100) + 1).toString();
+      photoArray.push({
+        imageUrl: `https://s3-us-west-1.amazonaws.com/photowheelopentabs/${pictureID}.jpg`,
+        comment: faker.lorem.sentence(),
+        date: faker.date.recent(),
+      });
+    }
+    samplePhotos.push({
+      id: id,
+      image: photoArray,
+    });
+  }
+}
 
-const insertSamplePhotos = function() {
-  database.Photo.create(samplePhotos)
-    .then(() => database.db.disconnect());
+generatePhotos();
+
+const insertSamplePhotos = function () {
+  Photo.create(samplePhotos)
+    .then(() => database.disconnect());
 };
 
 insertSamplePhotos();
