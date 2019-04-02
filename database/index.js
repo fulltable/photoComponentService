@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/photowheel');
+mongoose.connect('mongodb://localhost/photowheel', { useNewUrlParser: true });
 const db = mongoose.connection;
 
 // db.on('error', console.error.bind(console, 'connection error:'));
