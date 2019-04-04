@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('../database/index.js');
+const Photo = require('../database/index.js');
 // const search = require('../database/index').search;
 
 const app = express();
@@ -26,7 +26,7 @@ app.use(express.static(__dirname + "/../client/dist"));
 // });
 
 app.get('/api/restaurants/1/photos', (req, res) => {
-  console.log('get request', db);
+  Photo.find();
   // return db.search()
   // .then((result) => {
   //   console.log('result of find', result);
