@@ -26,9 +26,7 @@ class App extends React.Component {
     return (
       <div>
       <h3>10 Photos</h3>
-      {this.state.photoCarousel === null ? null : <img src= {(this.state.photoCarousel[0].imageUrl)}/>}
-      {/* {console.log(this.state.photoCarousel[0].imageUrl)} */}
-      {/* <img src={this.state.photoCarousel[0]}> */}
+      {this.state.photoCarousel === null ? null : <img width="500" src= {(this.state.photoCarousel[0].imageUrl)}/>}
       {/* <PhotoCarousel photoCarousel={this.state.photoCarousel} /> */}
       </div>
     )
