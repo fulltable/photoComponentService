@@ -1,11 +1,28 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/photowheel', { useNewUrlParser: true });
-const db = mongoose.connection;
+const mongoUri = 'mongodb://localhost/photowheel';
+const db = mongoose.connect(mongoUri, { useNewUrlParser: true });
+mongoose.Promise = global.Promise;
 
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function () {
-//   console.log('were connected!');
-// });
+// const mongoose = require('mongoose');
 
+const photoSchema = mongoose.Schema({
+  restaurantId: Number,
+  image: [{
+    imageUrl: String,
+    comment: String,
+    date: Date,
+  }],
+});
+
+const Photo = mongoose.model('Photo', photoSchema);
+
+const search = () => {
+  console.log('inside search');
+  return Photo.find();
+};
+
+// module.exports = Photo;
+module.exports.search = search;
 module.exports = db;
+module.exports = Photo;
