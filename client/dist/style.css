@@ -1,3 +1,8 @@
+.photo-gallery {
+  width: 640px;
+
+}
+
 .photo-gallery-header {
   font-size: 24px;
   font-weight: 700;
@@ -29,19 +34,20 @@ body {
   float: left;
   width: 20%;
 }
+
+.photoGridMainContainer {
+  width: 640px;
+}
+
+.photoGridContainer {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .photoGridPhoto {
   width: 125px;
   height: 125px;
   object-fit: cover;
-}
-
-.photoGridContainer {
-  width: 640px;
-}
-
-.photoContainer {
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .modalPhoto {
@@ -80,13 +86,6 @@ body {
   padding: 25px;
   right: 0;
   top: 20px;
-}
-
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .cursor {
