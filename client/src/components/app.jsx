@@ -26,18 +26,17 @@ class App extends React.Component {
   showModalState(value, slideIndex) {
     this.setState({showModal: value, slideIndex: slideIndex}); 
   }
+  
   render() {
 
     return (
       <div className='photo-gallery'>
         <h2 className='photo-gallery-header'>10 Photos</h2>
         <Photostab showModalState={this.showModalState.bind(this)} photos={this.state.photos}></Photostab>
-        {this.state.showModal && (<MyModal photos={this.state.photos} slideIndex={this.state.slideIndex} showModalState={this.showModalState.bind(this)}></MyModal>)}
+        {this.state.showModal && (<MyModal photos={this.state.photos} slideIndex={this.state.slideIndex} showModalState={this.showModalState.bind(this)}t></MyModal>)}
       </div>
     )
   }
 }
 
 export default App;
-
-// </div><div className='container' >{this.state.photoCarousel === null ? null : <img width="500" src= {(this.state.photoCarousel[0].imageUrl)}/>}
