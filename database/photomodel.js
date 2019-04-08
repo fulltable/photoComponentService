@@ -11,10 +11,4 @@ const photoSchema = mongoose.Schema({
 
 const Photo = mongoose.model('Photo', photoSchema);
 
-// const search = () => {
-//   console.log('inside search');
-//   return Photo.find();
-// };
-
 module.exports = Photo;
-// module.exports.search = search;
