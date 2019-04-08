@@ -18,7 +18,7 @@ class Photostab extends React.Component {
           <div key={idx} onClick={() => this.props.showModalState(true, idx)} >
            <div className="photoContainer">
             <div className="column">
-            <img className="photoC" src={photo.imageUrl} alt={photo.comment}/>
+            <img className="photoGridPhoto" src={photo.imageUrl} alt={photo.comment}/>
             </div>
           </div>
         </div>

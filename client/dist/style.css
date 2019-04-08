@@ -19,10 +19,6 @@ body {
   box-sizing: border-box;
 }
 
-.row > .column {
-  /* padding: 0 1px; */
-}
-
 .row:after {
   content: "";
   display: table;
@@ -33,10 +29,19 @@ body {
   float: left;
   width: 20%;
 }
-.photoC {
-  width: 200px;
-  height: 200px;
+.photoGridPhoto {
+  width: 125px;
+  height: 125px;
   object-fit: cover;
+}
+
+.photoGridContainer {
+  width: 640px;
+}
+
+.photoContainer {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .modalPhoto {
@@ -44,9 +49,6 @@ body {
   height: 400px;  
   object-fit: cover;
   margin-left: 30%;
-}
-.photoGridContainer {
-  width: 900px;
 }
 
 .modal {
@@ -64,7 +66,6 @@ body {
 
 .modal-content {
   position: relative;
-  /* background-color: #fefefe; */
   margin: 0 auto;
   padding: 0;
   width: 90%;
@@ -114,7 +115,3 @@ body {
   border-radius: 3px 0 0 3px;
 }
 
-.photoContainer {
-  max-width: 100%;
-  max-height: 100%;
-}
