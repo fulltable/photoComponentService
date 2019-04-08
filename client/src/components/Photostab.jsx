@@ -12,7 +12,7 @@ class Photostab extends React.Component {
   render() {
     return (
       this.props.photos && 
-      <div >
+      <div className="photoGridContainer">
         <div className="row">
         {this.props.photos.map((photo, idx) => 
           <div key={idx} onClick={() => this.props.showModalState(true, idx)} >
