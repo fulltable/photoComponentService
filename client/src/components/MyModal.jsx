@@ -20,8 +20,8 @@ class MyModal extends React.Component {
     <div id="modal" className="modal">
       <span className="close cursor"  onClick={() => this.props.showModalState(false)}>&times;</span>
       <div className="modal-content">
-        <div>
-          <img width='100%'src={this.props.photos[this.state.slideIndex].imageUrl}></img>
+        <div >
+          <img className="modalPhoto" src={this.props.photos[this.state.slideIndex].imageUrl}></img>
         </div>
       <a className="prev" onClick={this.plusSlides.bind(this, -1)}>&#10094;</a>
       <a className="next" onClick={this.plusSlides.bind(this, 1)}>&#10095;</a>
