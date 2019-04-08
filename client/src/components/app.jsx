@@ -9,14 +9,15 @@ class App extends React.Component {
     this.state = {
       photos: [],
       showModal: false,
-      slideIndex: -1
+      slideIndex: -1,
+      restaurantIdState: 14
     }
   }
-
+  
   componentDidMount() {
     $.ajax({
       type: "GET",
-      url: "/api/restaurants/2/photos",
+      url: `/api/restaurants/${this.state.restaurantIdState}/photos`,
       success: results => {
       this.setState({photos: results[0].image}); 
       }
