@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const Photo = require('../database/photomodel');
-const db = require('../database/index');
+const path = require('path');
+const { Photo } = require('../database/photomodel');
+const { db } = require('../database/index');
 
 const app = express();
 app.use(bodyParser.json());
@@ -12,16 +13,16 @@ app.use(
 );
 const port = 3000;
 
-app.use(express.static(__dirname + "/../client/dist"));
-// path.join(__dirname, '/client/src/index.jsx') fix later
+app.use('/restaurants/:id', express.static(path.join(__dirname, '/../client/dist')));
 
 app.get('/api/restaurants/:id/photos', (req, res) => {
-  console.log('get request received');
-  Photo.find({ restaurantId: req.params.id })
-    .then((results) => {
-      console.log(results);
-      res.send(results);
-    });
+  Photo.findOne({ restaurantId: req.params.id }, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send(results);
+    }
+  });
 });
 
 app.listen(port, () => {

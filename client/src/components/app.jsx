@@ -10,20 +10,26 @@ class App extends React.Component {
       photos: [],
       showModal: false,
       slideIndex: -1,
-      restaurantIdState: 14
+      restaurantIdState: 18
     }
   }
   
   componentDidMount() {
+    const arrayRestaurant = window.location.pathname.split('/');
+    this.setState({restaurantIdState: arrayRestaurant[2]}, this.getPhotos);
+  }
+
+  getPhotos() {
     $.ajax({
       type: "GET",
       url: `/api/restaurants/${this.state.restaurantIdState}/photos`,
       success: results => {
-      this.setState({photos: results[0].image}); 
+        console.log(results);
+      this.setState({photos: results.image}); 
       }
     });
   }
-
+  
   showModalState(value, slideIndex) {
     this.setState({showModal: value, slideIndex: slideIndex}); 
   }
