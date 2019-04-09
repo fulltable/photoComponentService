@@ -24,8 +24,6 @@ function generatePhotos() {
 
 generatePhotos();
 
-console.log(samplePhotos);
-
 const insertSamplePhotos = () => {
   Photo.Photo.create(samplePhotos)
     .then(() => database.db.close());
