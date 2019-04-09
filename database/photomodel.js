@@ -1,16 +1,27 @@
 const mongoose = require('mongoose');
 
-mongoose.Promise = global.Promise;
-
 const photoSchema = mongoose.Schema({
-  id: Number,
-  image: {
+  restaurantId: Number,
+  image: [{
     imageUrl: String,
     comment: String,
     date: Date,
-  },
+  }],
 });
 
 const Photo = mongoose.model('Photo', photoSchema);
 
-module.exports = Photo;
+// const findRestaurantbyID = (id, cb) => {
+//   Photo.findById(id, (err, success) => {
+//     if (err) {
+//       cb(err);
+//     } else {
+//       cb(null, success);
+//     }
+//   });
+// };
+
+
+module.exports = {
+  Photo,
+};

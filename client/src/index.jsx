@@ -1,6 +1,5 @@
-//puts your react app into html
-import App from './components/App.js';
-// import ReactDOM from 'react-dom';
+import App from './components/App.jsx';
+import ReactDOM from 'react-dom';
+import React from 'react';
+
 ReactDOM.render(<App />, document.getElementById('app'));
-//document is index.html, method grabs teh id that you named (app)
-//

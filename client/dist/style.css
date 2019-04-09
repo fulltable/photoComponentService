@@ -1,0 +1,116 @@
+.photo-gallery {
+  width: 640px;
+
+}
+
+.photo-gallery-header {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #2d333f;
+  border-bottom: 1px solid #d8d9db;
+  padding-bottom: 16px;
+  margin: 0 0 16px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 20%;
+}
+
+.photoGridMainContainer {
+  width: 640px;
+}
+
+.photoGridContainer {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.photoGridPhoto {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+}
+
+.modalPhoto {
+  width: 400px;
+  height: 400px;  
+  object-fit: cover;
+  margin-left: 30%;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 10;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,.9);
+}
+
+.modal-content {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.close {
+  color: #91949a;
+  font-size: 35px;
+  font-weight: none;
+  position: absolute;
+  padding: 25px;
+  right: 0;
+  top: 20px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.prev,
+.next {
+    color: #91949a;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    font-family: icons;
+    font-style: normal;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+  	width: auto;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
