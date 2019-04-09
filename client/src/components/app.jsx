@@ -10,7 +10,7 @@ class App extends React.Component {
       photos: [],
       showModal: false,
       slideIndex: -1,
-      restaurantIdState: 18
+      restaurantIdState: 1
     }
   }
   
