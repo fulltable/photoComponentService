@@ -10,7 +10,7 @@ function generatePhotos() {
     for (let i = 0; i < 10; i += 1) {
       const pictureID = (Math.floor(Math.random() * 100) + 1).toString();
       photoArray.push({
-        imageUrl: `https://s3-us-west-1.amazonaws.com/photowheelopentabs/s${pictureID}.jpg`,
+        imageUrl: `https://s3-us-west-1.amazonaws.com/photowheelopentabs/Photos/s${pictureID}.jpg`,
         comment: faker.lorem.sentence(),
         date: faker.date.recent(),
       });
@@ -25,8 +25,8 @@ function generatePhotos() {
 generatePhotos();
 
 const insertSamplePhotos = () => {
-  Photo.create(samplePhotos)
-    .then(() => database.close());
+  Photo.Photo.create(samplePhotos)
+    .then(() => database.db.close());
 };
 
 insertSamplePhotos();

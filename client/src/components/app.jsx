@@ -10,7 +10,7 @@ class App extends React.Component {
       photos: [],
       showModal: false,
       slideIndex: -1,
-      restaurantIdState: 18
+      restaurantIdState: 1
     }
   }
   
@@ -35,7 +35,6 @@ class App extends React.Component {
   }
   
   render() {
-
     return (
       <div className='photo-gallery'>
         <h2 className='photo-gallery-header'>10 Photos</h2>
