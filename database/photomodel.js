@@ -11,16 +11,9 @@ const photoSchema = mongoose.Schema({
 
 const Photo = mongoose.model('Photo', photoSchema);
 
-// const findRestaurantbyID = (id, cb) => {
-//   Photo.findById(id, (err, success) => {
-//     if (err) {
-//       cb(err);
-//     } else {
-//       cb(null, success);
-//     }
-//   });
-// };
-
+// Photo.create({ size: 'small' }, function (err, small) {
+//   if (err) return handleError(err);
+// });
 
 module.exports = {
   Photo,
