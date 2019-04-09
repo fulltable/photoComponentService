@@ -11,7 +11,7 @@ app.use(
     extended: true,
   }),
 );
-const port = 3000;
+const port = 3002;
 
 app.use('/restaurants/:id', express.static(path.join(__dirname, '/../client/dist')));
 
