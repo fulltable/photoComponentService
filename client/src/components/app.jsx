@@ -22,7 +22,7 @@ class App extends React.Component {
   getPhotos() {
     $.ajax({
       type: "GET",
-      url: `/api/restaurants/${this.state.restaurantIdState}/photos`,
+      url: `http://localhost:3002/api/restaurants/${this.state.restaurantIdState}/photos`,
       success: results => {
         console.log(results);
       this.setState({photos: results.image}); 
