@@ -4,9 +4,24 @@
   <title>Photo Carousel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <style type = "text/css"> 
+    @font-face {
+      font-family: "Brandon-Bold";
+      src: url("Fonts/BTextBold.otf");
+    }
+  </style>
 </head>
 <body>
 <div id="app"></div>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 <script type="text/javascript" src="bundle.js"></script>
+<script>
+  ReactDOM.render(
+    React.createElement(Photos),
+    document.getElementById('app')
+  );
+</script>
 </body>
 </html>
