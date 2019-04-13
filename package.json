@@ -7,10 +7,11 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "react-dev": "webpack -d --watch",
+    "react-dev": "webpack -p --watch",
     "server-dev": "nodemon server/server.js",
     "test": "jest",
-    "db.setup": "node database/seed.js"
+    "db.setup": "node database/seed.js",
+    "start": "node database/seed.js & node server/server.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
