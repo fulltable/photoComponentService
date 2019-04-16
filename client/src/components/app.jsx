@@ -2,6 +2,7 @@ import React from "react";
 import $ from "jquery";
 import Photostab from "./Photostab.jsx";
 import MyModal from "./MyModal.jsx";
+import "../style.css";
 
 class App extends React.Component {
   constructor(props) {
