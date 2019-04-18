@@ -1,3 +1,4 @@
+// Using Mongoose/MongoDB
 const mongoose = require('mongoose');
 
 const photoSchema = mongoose.Schema({
@@ -11,6 +12,4 @@ const photoSchema = mongoose.Schema({
 
 const Photo = mongoose.model('Photo', photoSchema);
 
-module.exports = {
-  Photo,
-};
+module.exports = Photo;

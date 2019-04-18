@@ -1,13 +1,15 @@
+// Using Mongoose/MongoDB
 const faker = require('faker');
-const database = require('./index');
+const db = require('./index');
 const Photo = require('./photomodel');
 
 const samplePhotos = [];
 
 function generatePhotos() {
-  for (let id = 1; id <= 100; id += 1) {
+  for (let i = 1; i <= 100; i += 1) {
     const photoArray = [];
-    for (let i = 0; i < 10; i += 1) {
+    const photoNumber = (Math.floor(Math.random() * 10) + 10);
+    for (let j = 0; j < photoNumber; j += 1) {
       const pictureID = (Math.floor(Math.random() * 100) + 1).toString();
       photoArray.push({
         imageUrl: `https://s3-us-west-1.amazonaws.com/photowheelopentabs/Photo/s${pictureID}_tn.jpg`,
@@ -16,17 +18,22 @@ function generatePhotos() {
       });
     }
     samplePhotos.push({
-      restaurantId: id,
+      restaurantId: i,
       image: photoArray,
     });
   }
 }
 
 generatePhotos();
+console.log(samplePhotos);
 
-const insertSamplePhotos = () => {
-  Photo.Photo.create(samplePhotos)
-    .then(() => database.db.close());
-};
+// const insertSamplePhotos = () => {
+//   Photo.create(samplePhotos)
+//     .then(() => db.close());
+// };
 
-insertSamplePhotos();
+// insertSamplePhotos();
+
+// Using Cassandra
+// const faker = require('faker');
+// const client = require('./index');
