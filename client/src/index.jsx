@@ -1,3 +1,3 @@
 import App from './components/app.jsx';
 
-window.Photos = App;
+ReactDOM.render(<App />, document.getElementById('app'));

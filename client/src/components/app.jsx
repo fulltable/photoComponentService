@@ -25,8 +25,7 @@ class App extends React.Component {
       type: "GET",
       url: `/api/restaurants/${this.state.restaurantIdState}/photos`,
       success: results => {
-        console.log(results);
-      this.setState({photos: results.image}); 
+      this.setState({photos: [results]}); 
       }
     });
   }
