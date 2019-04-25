@@ -8,7 +8,7 @@ module.exports = {
         // if (err) {
         //   res.status(400).send('Error');
         // } else {
-        res.status(200).json(result);
+        res.status(200).send(result);
       });
     },
     post: (req, res) => {

@@ -12,7 +12,7 @@ module.exports = (sequelize, Sequelize) => {
         date: {
             type: Sequelize.STRING
         },
-        imageUrl: {
+        imageurl: {
             type: Sequelize.STRING
         },
         userid: {

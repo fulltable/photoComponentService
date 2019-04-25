@@ -12,13 +12,13 @@ function writeTenMillionTimes(writer, dataGenerator, encoding, callback, i) {
     do {
       i++;
       let result = dataGenerator(i) + '\n';
-      if(i === 1000000) {
+      if(i === 100000000) {
         writer.write(result, encoding, callback);
       } else {
         ok = writer.write(result, encoding);
       }
-    } while (i < 1000000 && ok);
-    if(i < 1000000) {
+    } while (i < 100000000 && ok);
+    if(i < 100000000) {
       writer.once('drain', write);
     }
   }
