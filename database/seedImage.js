@@ -30,7 +30,6 @@ const generatePhotos = (i) => {
     const pictureID = (Math.floor(Math.random() * 100) + 1).toString();
       
     photoArr.push(
-        i,
         faker.lorem.sentence(),
         moment(faker.date.recent()).format('MMMM Do YYYY, h:mm:ss a'),
         `https://s3-us-west-1.amazonaws.com/photowheelopentabs/Photo/s${pictureID}_tn.jpg`, 

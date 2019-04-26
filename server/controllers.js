@@ -5,18 +5,12 @@ module.exports = {
     get: (req, res) => {
       const params = req.params.id;
       models.restaurants.get(params, (result) => {
-        // if (err) {
-        //   res.status(400).send('Error');
-        // } else {
         res.status(200).send(result);
       });
     },
     post: (req, res) => {
       const params = req.params.id;
       models.restaurants.post(params, () => {
-        // if (err) {
-        //   res.status(400).send('Error');
-        // } else {
         res.status(200).send('Success!');
       });
     },
@@ -35,23 +29,17 @@ module.exports = {
     post: (req, res) => {
       const params = [req.params.id, [req.body.comment, req.body.date, req.body.imageUrl]];
       models.restaurant.post(params, () => {
-        // if (err) {
-        //   res.status(400).send('Error');
-        // } else {
         res.status(200).send('Success!');
       });
     },
     put: (req, res) => {
-      const params = [req.params.id, [req.body.comment, req.body.date, req.body.imageUrl]];
+      const params = [req.query.id, req.query.comment];
       models.restaurant.put(params, () => {
-        // if (err) {
-        //   res.send(err);
-        // } else {
         res.send('Updated!');
       });
     },
     delete: (req, res) => {
-      const params = [req.params.id, req.query.imageUrl];
+      const params = req.query.id;
       models.restaurant.delete(params, (err) => {
         if (err) {
           res.status(400).send('Error');

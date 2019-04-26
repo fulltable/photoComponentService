@@ -1,0 +1,18 @@
+config:
+  target: 'http://localhost:3002'
+  phases:
+    - duration: 1
+      arrivalRate: 5000
+scenarios:
+  - flow:
+    - get:
+        url: "/api/restaurants/9200000/photos"
+    - post:
+        url: "/api/restaurant/9200001/photos"
+        json: 
+          id: 1
+          comment: "This location is very nice. The host is also very accommodating."
+          date: "April 25rd 2019, 12:00:12 pm"
+          imageurl: "https://s3-us-west-1.amazonaws.com/photowheelopentabs/Photo/s77_tn.jpg"
+          userid: 9200001
+          

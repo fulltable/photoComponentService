@@ -2,7 +2,7 @@
 module.exports = (sequelize, Sequelize) => {
     return sequelize.define('images', {
         id: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.BIGINT,
             primaryKey: true, 
             autoIncrement: true
         },
@@ -21,8 +21,8 @@ module.exports = (sequelize, Sequelize) => {
     }, { timestamps: false });
 }
 
-// Images.sync({force: true}).then(function () {
-//     return Images.create();
-// });
+// Queries to seed and formate image table
+// var query = `\COPY images (comment, date, imageurl, userid) FROM '~/Desktop/photoComponentService/database/dataImage.csv' DELIMITER '@'`;
+// var query1 = `CREATE INDEX idx_userid ON images(userid)`;
 
-// var query = `\COPY images FROM '~/Desktop/photoComponentService/database/dataImage.csv' DELIMITER '@'`;
+

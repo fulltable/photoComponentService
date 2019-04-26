@@ -7,7 +7,7 @@ var execute = function(query) {
     });
 }
 
-var query1 = `CREATE TABLE IF NOT EXISTS images (id INT, comment TEXT, date TEXT, imageurl TEXT, userid INT, PRIMARY KEY ((imageurl, userid), id))`;
+var query1 = `CREATE TABLE IF NOT EXISTS images (id INT, comment TEXT, date TEXT, imageurl TEXT, userid INT, PRIMARY KEY ((imageurl, userid), id)) WITH CLUSTERING ORDER BY (id ASC)`;
 // var query2 = `COPY images (id, comment, date, imageurl, userid) FROM '~/Desktop/photoComponentService/database/dataImage.csv' WITH DELIMITER='@'`;
 var q1 = execute(query1);
 
