@@ -1,5 +1,5 @@
 {
-  "name": "photo-carousel",
+  "name": "photoComponentService",
   "description": "> Project description",
   "author": "",
   "license": "ISC",
@@ -28,15 +28,11 @@
     "moment": "^2.24.0",
     "mongoose": "^5.4.20",
     "newrelic": "^5.7.0",
-    "pg": "^6.4.2",
-    "pg-hstore": "^2.3.2",
     "radium": "^0.25.1",
-    "randomatic": "^3.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "sequelize": "^5.7.0",
-    "style-loader": "^0.23.1",
-    "zlib": "^1.0.5"
+    "style-loader": "^0.23.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -54,14 +50,10 @@
     "webpack-cli": "^3.3.0"
   },
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opentabs/photo-carousel.git"
+    "url": "git+https://github.com/fulltable/photoComponentService.git"
   },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/opentabs/photo-carousel/issues"
-  },
-  "homepage": "https://github.com/opentabs/photo-carousel#readme"
+  "keywords": []
 }
