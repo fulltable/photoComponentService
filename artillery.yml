@@ -1,18 +1,21 @@
 config:
-  target: 'http://localhost:3002'
+  target: "http://localhost:3002"
+  processor: "./my-functions.js"
   phases:
     - duration: 1
-      arrivalRate: 5000
+      arrivalRate: 50
 scenarios:
   - flow:
+    - function: "generateRandomData"
     - get:
-        url: "/api/restaurants/9200000/photos"
+        url: "/api/restaurants/{{ userid }}/photos"
     - post:
-        url: "/api/restaurant/9200001/photos"
+        url: "/api/restaurant/{{ userid }}/photos"
         json: 
-          id: 1
-          comment: "This location is very nice. The host is also very accommodating."
-          date: "April 25rd 2019, 12:00:12 pm"
-          imageurl: "https://s3-us-west-1.amazonaws.com/photowheelopentabs/Photo/s77_tn.jpg"
-          userid: 9200001
+          id: "{{ id }}"
+          comment: "{{ comment }}"
+          date: "{{ date }}"
+          imageurl: "{{ imageurl }}"
+          userid: "{{ userid }}"
+    # - log: "Sent a request with {{ id }}, {{ comment }}, {{ date }}, {{ imageurl }}, {{ userid }}"
           

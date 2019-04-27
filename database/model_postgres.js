@@ -21,7 +21,7 @@ module.exports = (sequelize, Sequelize) => {
     }, { timestamps: false });
 }
 
-// Queries to seed and formate image table
+// Queries to seed and format image table
 // var query = `\COPY images (comment, date, imageurl, userid) FROM '~/Desktop/photoComponentService/database/dataImage.csv' DELIMITER '@'`;
 // var query1 = `CREATE INDEX idx_userid ON images(userid)`;
 
