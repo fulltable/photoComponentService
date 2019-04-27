@@ -1,9 +1,9 @@
+const nr = require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
-const { Photo } = require('../database/photomodel');
-const { db } = require('../database/index');
+const router = require('./routes');
 
 const app = express();
 app.use(cors());
@@ -17,15 +17,7 @@ const port = 3002;
 
 app.use('/restaurants/:id', express.static(path.join(__dirname, '/../client/dist')));
 
-app.get('/api/restaurants/:id/photos', (req, res) => {
-  Photo.findOne({ restaurantId: req.params.id }, (err, results) => {
-    if (err) {
-      res.status(400).send(err);
-    } else {
-      res.status(200).send(results);
-    }
-  });
-});
+app.use('/api', router);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
