@@ -1,12 +1,12 @@
 const nr = require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+const compression = require('compression');
 const path = require('path');
 const router = require('./routes');
 
 const app = express();
-app.use(cors());
+app.use(compression());
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({

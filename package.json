@@ -8,16 +8,17 @@
   },
   "scripts": {
     "react-dev": "webpack -p --watch",
-    "server-dev": "nodemon server/server.js",
+    "server-dev": "nodemon server/cluster.js",
     "test": "jest",
     "db.setup": "node database/seed.js",
-    "start": "node database/seed.js & node server/server.js"
+    "start": "node database/seed.js & node server/cluster.js"
   },
   "dependencies": {
     "artillery": "^1.6.0-27",
     "body-parser": "^1.18.3",
     "cassandra-driver": "^4.0.0",
-    "cors": "^2.8.5",
+    "cluster": "^0.7.7",
+    "compression": "^1.7.4",
     "css-loader": "^2.1.1",
     "csv-write-stream": "^2.0.0",
     "express": "^4.16.4",
@@ -28,6 +29,7 @@
     "moment": "^2.24.0",
     "mongoose": "^5.4.20",
     "newrelic": "^5.7.0",
+    "os": "^0.1.1",
     "pg": "^7.10.0",
     "radium": "^0.25.1",
     "react": "^16.8.6",

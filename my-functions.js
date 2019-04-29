@@ -3,7 +3,7 @@ const moment = require('moment');
 
 function generateRandomData(userContext, events, done) {
   // Generate data with Faker
-  const id = Math.floor(Math.random() * 100000000);
+  const id = Math.floor(Math.random() * 10000000);
   const comment = `${faker.lorem.sentence()}`;
   const date = `${moment(faker.date.recent()).format('MMMM Do YYYY, h:mm:ss a')}`;
   const imageurl = `https://s3-us-west-1.amazonaws.com/photowheelopentabs/Photo/s${(Math.floor(Math.random() * 100) + 1).toString()}_tn.jpg`;
