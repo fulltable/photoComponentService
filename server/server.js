@@ -32,6 +32,9 @@ const port = 3002;
 
 app.use('/restaurants/:id', express.static(path.join(__dirname, '/../client/dist')));
 
+// For loader.io
+app.use('/', express.static(path.join(__dirname, '/../client/dist')));
+
 app.use('/api', router);
 
 app.listen(port, () => {
