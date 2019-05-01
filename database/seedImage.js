@@ -39,4 +39,4 @@ const generatePhotos = (i) => {
     return photoArr.join('@');  
 };
 
-writeTenMillionTimes(stream, generatePhotos, encoding = 'UTF-8', callback = () => {}, i = 0);
+writeTenMillionTimes(stream, generatePhotos, encoding = 'UTF-8', callback = () => {}, i = 50000000);

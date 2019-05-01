@@ -22,7 +22,9 @@ module.exports = (sequelize, Sequelize) => {
 }
 
 // Queries to seed and format image table
-// var query = `\COPY images (comment, date, imageurl, userid) FROM '~/Desktop/photoComponentService/database/dataImage.csv' DELIMITER '@'`;
-// var query1 = `CREATE INDEX idx_userid ON images(userid)`;
+// var query = `CREATE TABLE IF NOT EXISTS images (id SERIAL PRIMARY KEY, comment VARCHAR(255), date VARCHAR(255), imageurl VARCHAR(255), userid INT)`;
+// var query1 = `\COPY images (comment, date, imageurl, userid) FROM '~/Desktop/photoComponentService/database/dataImage.csv' DELIMITER '@'`;
+// var query2 = `CREATE INDEX idx_userid ON images(userid)`;
+
 
 

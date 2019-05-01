@@ -5,9 +5,11 @@ const ImagesModel = require('./model_postgres');
 
 const sequelize = new Sequelize(  
   'test',
-  process.env.DATABASE_USER,
-  process.env.DATABASE_PASSWORD, {
-    dialect: 'postgres'
+  'postgres',
+  '$password', {
+    dialect: 'postgres',
+    host: 'ec2-18-144-32-5.us-west-1.compute.amazonaws.com',
+    port: 5432, 
 });
 
 sequelize.authenticate()
