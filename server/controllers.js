@@ -1,11 +1,33 @@
+const redis = require('redis');
 const models = require('./models');
+
+// Create Redis Client
+const client = redis.createClient({
+  host: 'ec2-52-53-232-126.us-west-1.compute.amazonaws.com',
+  port: 6379,
+});
+
+client.on('ready', () => {
+  console.log('Redis is ready');
+});
+
+client.on('error', () => {
+  console.log('Error in Redis');
+});
 
 module.exports = {
   restaurants: {
     get: (req, res) => {
       const params = req.params.id;
-      models.restaurants.get(params, (result) => {
-        res.status(200).send(result);
+      client.get(params, (err, result) => {
+        if (result) {
+          res.status(200).send(result);
+        } else {
+          models.restaurants.get(params, (data) => {
+            client.setex(params, 60, JSON.stringify(data));
+            return res.status(200).send(data);
+          });
+        }
       });
     },
     post: (req, res) => {
