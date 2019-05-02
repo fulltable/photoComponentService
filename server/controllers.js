@@ -3,7 +3,7 @@ const models = require('./models');
 
 // Create Redis Client
 const client = redis.createClient({
-  host: 'ec2-13-57-242-190.us-west-1.compute.amazonaws.com',
+  host: '127.0.0.1',
   port: 6379,
 });
 
