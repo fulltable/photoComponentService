@@ -1,33 +1,11 @@
-const redis = require('redis');
 const models = require('./models');
-
-// Create Redis Client
-const client = redis.createClient({
-  host: '127.0.0.1',
-  port: 6379,
-});
-
-client.on('ready', () => {
-  console.log('Redis is ready');
-});
-
-client.on('error', () => {
-  console.log('Error in Redis');
-});
 
 module.exports = {
   restaurants: {
     get: (req, res) => {
       const params = req.params.id;
-      client.get(params, (err, result) => {
-        if (result) {
-          res.status(200).send(result);
-        } else {
-          models.restaurants.get(params, (data) => {
-            client.setex(params, 60, JSON.stringify(data));
-            return res.status(200).send(data);
-          });
-        }
+      models.restaurants.get(params, (result) => {
+        return res.status(200).send(result);
       });
     },
     post: (req, res) => {

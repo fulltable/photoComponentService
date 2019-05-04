@@ -8,7 +8,7 @@ const sequelize = new Sequelize(
   'postgres',
   '$password', {
     dialect: 'postgres',
-    host: 'ec2-13-57-242-190.us-west-1.compute.amazonaws.com',
+    host: 'ec2-54-67-57-14.us-west-1.compute.amazonaws.com',
     port: 5432, 
 });
 
